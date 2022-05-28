@@ -27,8 +27,9 @@ use App\Http\Controllers\Video_tagController;
     'middleware' => 'api',
     'prefix' => 'auth'
 
-], function () {      
-        Route::post('logout', [UserController::class, 'logout']);
+], function () {     
+        
+        Route::apiResource('logout',TagController::class);
         Route::apiResource('register',TagController::class);
         Route::apiResource('login',PostController::class);
         Route::apiResource('tags',TagController::class);
