@@ -14,7 +14,10 @@ class VideoController extends Controller
      */
     public function index()
     {
-        //
+        {
+            $video = Video::orderBy('id', 'desc')->get();            
+            return response()->json($video);
+        }
     }
 
     /**

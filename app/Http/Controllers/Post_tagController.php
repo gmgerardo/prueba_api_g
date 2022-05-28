@@ -15,7 +15,8 @@ class Post_tagController extends Controller
      */
     public function index()
     {
-        //
+        $Post_tag = Post_tag::orderBy('id', 'desc')->get();            
+            return response()->json($Post_tag);
     }
 
     /**

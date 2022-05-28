@@ -8,6 +8,13 @@ use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
+    public function index()
+    {
+        {
+            $users= User::orderBy('id', 'desc')->get();            
+            return response()->json($users);
+        }
+    }
     /**
      * Create a new ApiController instance.
      *

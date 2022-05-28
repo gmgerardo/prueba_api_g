@@ -14,7 +14,8 @@ class Video_tagController extends Controller
      */
     public function index()
     {
-        //
+        $tag = Video_tag::orderBy('id', 'desc')->get();
+        return response()->json($tag);
     }
 
     /**

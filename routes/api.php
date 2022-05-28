@@ -29,14 +29,22 @@ use App\Http\Controllers\Video_tagController;
 
 ], function () {     
         
-        Route::apiResource('logout',TagController::class);
-        Route::apiResource('register',TagController::class);
-        Route::apiResource('login',PostController::class);
+        Route::apiResource('logout',UserController::class);
+        Route::apiResource('register',UserController::class);
+        Route::apiResource('login',UserController::class);
         Route::apiResource('tags',TagController::class);
         Route::apiResource('posts',PostController::class);
         Route::apiResource('videos',VideoController::class);
         Route::apiResource('post_tags',Post_tagController::class);
         Route::apiResource('video_tags',Video_tagController::class);
+        Route::apiResource('vista_video_tags',Video_tagController::class);
+        Route::apiResource('vista_tags',TagController::class);
+        Route::apiResource('vista_post_tags',Post_tagController::class);
+        Route::apiResource('vista_video',VideoController::class);
+        Route::apiResource('vista_post',PostController::class);
+        Route::apiResource('vista_user',UserController::class);
+        
+        
         
     });
 
