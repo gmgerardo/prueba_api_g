@@ -19,5 +19,9 @@ class Video_tag extends Model
     public function video()
     {
         return $this->hasONe(Video::class, 'id', 'video_id');
-    }   
+    }
+    
+    public function Video_tags(){
+        return $this->hasMany(Video_tag::class);
+    }
 }

@@ -25,11 +25,6 @@ class UserController extends Controller
         return response()->json($user);
     }
 
-      /**
-     * Get a JWT via given credentials.
-     *
-     * @return \Illuminate\Http\JsonResponse
-     */
     public function login()
     {
         $credentials = request(['email', 'password']);
@@ -41,11 +36,7 @@ class UserController extends Controller
         return $this->respondWithToken($token);
     }
 
-    /**
-     * Log the user out (Invalidate the token).
-     *
-     * @return \Illuminate\Http\JsonResponse
-     */
+ 
     public function logout()
     {
         auth()->logout();
@@ -53,13 +44,7 @@ class UserController extends Controller
         return response()->json(['message' => 'Successfully logged out']);
     }
 
-      /**
-     * Get the token array structure.
-     *
-     * @param  string $token
-     *
-     * @return \Illuminate\Http\JsonResponse
-     */
+    
     protected function createNewToken($token){
         return response()->json([
             'access_token' => $token,
@@ -67,5 +52,8 @@ class UserController extends Controller
             'expires_in' => auth()->factory()->getTTL() * 60,
             'user' => auth()->user()
         ]);
+    }
+    public function UserController(){
+        return $this->hasMany(UserController::class);
     }
 }

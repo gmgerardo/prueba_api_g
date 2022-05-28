@@ -13,4 +13,7 @@ class Video extends Model
         'name', 
         'url', 
     ];
+    public function Video(){
+        return $this->belongsToMany(Video::class, 'Video');
+    }
 }
